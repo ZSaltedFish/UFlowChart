@@ -1,0 +1,4 @@
+<root>
+	<ZKnight.ZXMLui.EditorImage Name="OutLine" Bg="Packages/com.zknight.uflowchart/Resources/NodeOutLine.png" Anchor="Top, Left, Right, Down" Margin="0, 0, 0, 0" Active="false" ImageScaleMode="Stretching"/>
+	<ZKnight.ZXMLui.EditorImage Name="Selected" Bg="Packages/com.zknight.uflowchart/Resources/NodeSelected.png" Anchor="Top, Left, Right, Down" Margin="0, 0, 0, 0" Active="false" ImageScaleMode="Stretching"/>
+</root>

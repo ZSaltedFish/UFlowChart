@@ -1,0 +1,8 @@
+<root>
+	<ZKnight.ZXMLui.EditorImage Bg="Packages/com.zknight.uflowchart/Resources/MeshBg.png" ImageScaleMode="Tile" Anchor="Top, Left, Right, Down" Margin="0, 0, 0, 0"/>
+  <ZKnight.UFlowChart.Editor.FlowChartCanvas Name="FCanvas" Anchor="Left, Top, Right, Bown" Margin="0, 18, 0, 0" Size="1500, 1500" IsGroupType = "false">
+		<ZKnight.UFlowChart.Editor.FlowChartLinePanel Name="LinePanel" Anchor="Left, Top, Right, Button" Margin="0, 0, 0, 0" Size="1500, 1500" IsGroupType = "false"/>
+		<ZKnight.UFlowChart.Editor.FlowChartNodePanel Name="NodePanel" Anchor="Left, Top, Right, Button" Margin="0, 0, 0, 0" Size="1500, 1500" IsGroupType = "false"/>
+	</ZKnight.UFlowChart.Editor.FlowChartCanvas>
+  <ZKnight.ZXMLui.EditorToolBar Name="ToolBar" Size="500, 18" Anchor="Left, Top, Right" Margin="0, 0, 0, 0"/>
+</root>

@@ -1,0 +1,25 @@
+{
+  "name": "com.zknight.uflowchart",
+  "version": "2.0.0",
+  "displayName": "UFlow Chart",
+  "description": "UFlowChart 2.0Version",
+  "unity": "2022.1",
+  "keywords": [
+    "ZKnight",
+    "uflowChart"
+  ],
+  "author": {
+    "name": "ZKnight",
+    "email": "a263382008@gmail.com",
+    "url": ""
+  },
+  "samples": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "",
+    "directory": "com.zknight.uflowChart"
+  }
+}
