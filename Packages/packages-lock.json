@@ -135,6 +135,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.zknight.uflowchart": {
+      "version": "file:FlowChart",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.zknight.zxmlui": {
       "version": "https://github.com/ZSaltedFish/ZXMLui.git#1.0.2",
       "depth": 0,
