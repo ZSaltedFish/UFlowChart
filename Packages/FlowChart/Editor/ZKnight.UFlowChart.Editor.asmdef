@@ -1,0 +1,17 @@
+{
+    "name": "ZKnight.UFlowChart.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0105a76d32e8023498594335437973ec",
+        "GUID:fd2089028ea03f0458b588e5e8b8cb4f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

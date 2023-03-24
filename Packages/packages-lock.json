@@ -135,12 +135,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.zknight.uflowchart": {
+      "version": "file:FlowChart",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.zknight.zxmlui": {
-      "version": "https://github.com/ZSaltedFish/ZXMLui.git#1.0.0",
+      "version": "https://github.com/ZSaltedFish/ZXMLui.git#1.0.2",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "b4710727db537c881889e944c26b5fee0835cd91"
+      "hash": "293009c40539b21491afc83565c0446be332645e"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
