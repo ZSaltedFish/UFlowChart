@@ -1,25 +1,27 @@
 {
   "name": "com.zknight.uflowchart",
   "version": "2.0.0",
-  "displayName": "UFlow Chart",
-  "description": "UFlowChart 2.0Version",
-  "unity": "2022.1",
-  "keywords": [
-    "ZKnight",
-    "uflowChart"
-  ],
-  "author": {
-    "name": "ZKnight",
-    "email": "a263382008@gmail.com",
-    "url": ""
-  },
-  "samples": [],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+  "description": "UFlowChart 2.0 version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "",
-    "directory": "com.zknight.uflowChart"
-  }
+    "url": "git+https://github.com/ZSaltedFish/UFlowChart.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "unity",
+    "flowchart"
+  ],
+  "author": "zknight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZSaltedFish/UFlowChart/issues"
+  },
+  "homepage": "https://github.com/ZSaltedFish/UFlowChart#readme",
+  "displayName": "U Flow Chart"
 }
