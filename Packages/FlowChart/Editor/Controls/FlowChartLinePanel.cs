@@ -143,6 +143,7 @@ namespace ZKnight.UFlowChart.Editor
             {
                 uint key = ids[index];
                 LineConfig config = _id2Array[key];
+
                 for (int i = 0; i < config.Points.Length - 1; ++i)
                 {
                     float width = config.IsHovering ? config.Width * 2 : config.Width;
