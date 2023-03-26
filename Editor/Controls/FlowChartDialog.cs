@@ -7,6 +7,7 @@ namespace ZKnight.UFlowChart.Editor
 {
     public class FlowChartDialog : EditorControlDialog
     {
+        public GameObject OpenningSource;
         public FlowChartModel Model;
 
         private static string[] _FILTER = new string[] { "Prefab", "prefab" };
@@ -57,6 +58,7 @@ namespace ZKnight.UFlowChart.Editor
             FCanvas.Clear();
             Manager = new ChartNodeInfoManager();
             _srcObj = AssetDatabase.LoadAssetAtPath<GameObject>(str);
+            OpenningSource = _srcObj;
             Manager.ReadFromGameObject(_srcObj);
             FCanvas.InitNode(Manager.Nodes.ToArray());
         }
@@ -66,6 +68,7 @@ namespace ZKnight.UFlowChart.Editor
             FCanvas.Clear();
             Manager = new ChartNodeInfoManager();
             _srcObj = go;
+            OpenningSource = _srcObj;
             AssetPath = AssetDatabase.GetAssetPath(go);
             Manager.ReadFromGameObject(_srcObj);
             FCanvas.InitNode(Manager.Nodes.ToArray());
@@ -99,11 +102,22 @@ namespace ZKnight.UFlowChart.Editor
                     _srcObj = EditorResHelper.ReplacePrefabAsset(AssetPath, go);
                     DestroyImmediate(go);
                 }
+                OpenningSource = _srcObj;
+
                 Debug.Log($"存储成功");
             }
             catch (Exception err)
             {
                 Debug.LogError(err);
+            }
+        }
+
+        public override void OnDllReloaded()
+        {
+            ReloadGUI();
+            if (OpenningSource!= null)
+            {
+                OpenPrefab(OpenningSource);
             }
         }
     }
