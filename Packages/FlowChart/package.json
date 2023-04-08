@@ -1,6 +1,6 @@
 {
   "name": "com.zknight.uflowchart",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "UFlowChart 2.0 version",
   "main": "index.js",
   "scripts": {

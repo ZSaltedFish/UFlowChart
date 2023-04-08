@@ -144,11 +144,11 @@
       }
     },
     "com.zknight.zxmlui": {
-      "version": "https://github.com/ZSaltedFish/ZXMLui.git#LTS",
+      "version": "https://github.com/ZSaltedFish/ZXMLui.git?path=Packages/ZXMLui",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "36bca3054142cee821303a396c22b6ed864ffc5f"
+      "hash": "1dcddf1eb9ba790ffa9ac5dec1af0ac2685deca1"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
