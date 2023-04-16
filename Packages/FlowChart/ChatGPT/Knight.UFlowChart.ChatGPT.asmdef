@@ -1,0 +1,19 @@
+{
+    "name": "Knight.UFlowChart.ChatGPT",
+    "rootNamespace": "Knight.UFlowChart.ChatGPT",
+    "references": [
+        "GUID:478a2357cc57436488a56e564b08d223",
+        "GUID:fd2089028ea03f0458b588e5e8b8cb4f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,9 +1,10 @@
 {
     "name": "ZKnight.UFlowChart.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "ZKnight.UFlowChart.Editor",
     "references": [
         "GUID:0105a76d32e8023498594335437973ec",
-        "GUID:fd2089028ea03f0458b588e5e8b8cb4f"
+        "GUID:fd2089028ea03f0458b588e5e8b8cb4f",
+        "GUID:1bc8652d8a8ff0a479e5c6bc817394e9"
     ],
     "includePlatforms": [
         "Editor"

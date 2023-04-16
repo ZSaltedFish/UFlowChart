@@ -1,0 +1,19 @@
+接下来我会给你一个JSON文件，里面包含多个指令的内容。其中FullName为指令的名字，Descriptions是指令的描述，Inputs是指令的输入内容，Output是指令的输出内容，Links是连接下一个指令。
+如果我给你一个指令的描述和参数，你就要把指令的NodeName, NodeClass，Inputs，Links作为输出，其中，Inputs和Links必须是数组。
+每一个指令必须有一个独立的名字，比如说Node0，这样Links可以指向这个名字，形成一个指令链条。这个时候请用，"<Link的FieldName>": "<NodeName>"返回。请不要让Link指向一个不存在的指令。
+Input的情况有两种，一种是当前指令直接赋值，这种情况下使用:
+"Inputs":[
+	{
+		"FieldName": "InputFieldName",
+		"Value": "Value Input"
+	}
+]
+另一种情况是由之前的指令的Outputs给与，这情况使用就是:
+"Inputs": [
+	{
+		"FieldName": "InputFieldName",
+		""Source": "Node0 OutputField"
+	}
+]
+返回结果必须是完整的JSON格式文本，不带有其他多余的描述字样。
+如果你明白了，就直接回复一个“好”。

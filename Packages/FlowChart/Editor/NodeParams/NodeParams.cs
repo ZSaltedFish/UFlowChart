@@ -124,7 +124,7 @@ namespace ZKnight.UFlowChart.Editor
 
         private ParamOutput CreateOutput(FieldInfo info, int v, FlowChartOutputAttribute outAttr)
         {
-            ParamOutput output = new ParamOutput(v, info.FieldType, this);
+            ParamOutput output = new ParamOutput(v, info.FieldType, this, info);
             if (!string.IsNullOrEmpty(outAttr.Description))
             {
                 output.Description = outAttr.Description;
@@ -245,7 +245,7 @@ namespace ZKnight.UFlowChart.Editor
         /// <param name="type">类型</param>
         public void AddOutput(int id, Type type, string name)
         {
-            ParamOutput output = new ParamOutput(id, type, this)
+            ParamOutput output = new ParamOutput(id, type, this, null)
             {
                 Description = name
             };
@@ -350,6 +350,17 @@ namespace ZKnight.UFlowChart.Editor
                 ParamOutput newOutput = newParams.Outputs[i];
                 output.UpdateFrom(newOutput);
             }
+        }
+
+        /// <summary>
+        /// 通过名字获取Output的索引
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public int GetOutputIndexByName(string v)
+        {
+            return Outputs.FindIndex(p => p.FieldInfo.Name == v);
         }
         #endregion
     }

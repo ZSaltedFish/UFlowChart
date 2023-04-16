@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEditor;
 using UnityEngine;
+using ZKnight.UFlowChart.Runtime;
 using ZKnight.ZXMLui;
 
 namespace ZKnight.UFlowChart.Editor
@@ -30,6 +31,8 @@ namespace ZKnight.UFlowChart.Editor
 
             EditorPopupMenu toolPopup = NodeFactoryXML.CreateEditorControl<EditorPopupMenu>();
             toolPopup.AddMenu("Sub Chart Dir", SubChartDir);
+            toolPopup.AddMenu("ChatGPT", ChatGPTGate);
+            //toolPopup.AddMenu("ChatGPTHead", ChatGPTHead);
             ToolBar.AddItem("Tool", toolPopup);
         }
 
@@ -42,6 +45,32 @@ namespace ZKnight.UFlowChart.Editor
                 FlowChartConfig.INSTANCE.Save();
                 SubChartDirHelper.Init();
             }
+        }
+
+        private void ChatGPTGate(object obj)
+        {
+            ChatGPTCommand.OpenWindow(this);
+        }
+
+        public void GPTCallback(string arg2)
+        {
+            try
+            {
+                var startIndex = arg2.IndexOf('{');
+                var endIndex = arg2.LastIndexOf('}');
+                var json = arg2.Substring(startIndex, endIndex - startIndex + 1);
+                CreateNodeByJson.GetNodeByJson(this, json);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex);
+            }
+        }
+
+        private void ChatGPTHead(object obj)
+        {
+            var descJson = ChatGPTCreator.GetGPTHead();
+            Debug.Log(descJson);
         }
 
         private void OpenPanel()

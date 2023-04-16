@@ -1,3 +1,14 @@
 {
-	"name": "ZKnight.UFlowChart.Runtime"
+    "name": "ZKnight.UFlowChart.Runtime",
+    "rootNamespace": "ZKnight.UFlowChart.Runtime",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

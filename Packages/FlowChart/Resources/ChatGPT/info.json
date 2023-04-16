@@ -1,0 +1,27 @@
+{
+    "Node0": {
+        "NodeName": "Node0",
+        "NodeClass": "ZKnight.UFlowChart.Node.ObjectCreated",
+        "Inputs": [],
+        "Links": {
+            "Next": "Node1"
+        }
+    },
+    "Node1": {
+        "NodeName": "Node1",
+        "NodeClass": "ZKnight.UFlowChart.Node.PlayAnimation",
+        "Inputs": [
+            {
+                "FieldName": "Anim",
+                "Source": "Node0 CreatedUnit"
+            },
+            {
+                "FieldName": "AnimationName",
+                "Value": "Walk"
+            }
+        ],
+        "Links": {
+            "Next": ""
+        }
+    }
+}
