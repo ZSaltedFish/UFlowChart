@@ -17,7 +17,7 @@ namespace ZKnight.UFlowChart.Editor
 
         public bool Inited => _inited;
         public bool InitedFaild => _initedFaild;
-
+        private GUIStyle _edit;
         private string _message;
 
         public void Init()
@@ -26,6 +26,9 @@ namespace ZKnight.UFlowChart.Editor
             GPT.SetAIPKey(APIKey);
             GPT.Send(head, InitReturn, null);
             _initing = true;
+
+            _edit = EditorStyles.textArea;
+            _edit.fontSize = 26;
         }
 
         private void InitReturn(bool arg1, string arg2)
@@ -73,7 +76,8 @@ namespace ZKnight.UFlowChart.Editor
                 return;
             }
 
-            _message = EditorGUILayout.TextArea(_message, GUILayout.Height(200));
+            _message = EditorGUILayout.TextArea(_message, _edit, GUILayout.Height(200));
+
             if (GUILayout.Button("Send"))
             {
                 Send(_message, SendCallback);

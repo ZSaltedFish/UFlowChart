@@ -63,7 +63,7 @@ namespace ZKnight.UFlowChart.Editor
             }
             catch (Exception ex)
             {
-                Debug.Log(ex);
+                Debug.LogError(ex);
             }
         }
 

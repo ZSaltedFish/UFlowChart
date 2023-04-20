@@ -15,5 +15,34 @@ Input的情况有两种，一种是当前指令直接赋值，这种情况下使
 		""Source": "Node0 OutputField"
 	}
 ]
-返回结果必须是完整的JSON格式文本，不带有其他多余的描述字样。
+
+一下是一个返回结果的样例:
+{
+    "Node0": {
+        "NodeName": "Node0",
+        "NodeClass": "ZKnight.UFlowChart.Node.ObjectCreated",
+        "Inputs": [],
+        "Links": {
+            "Next": "Node1"
+        }
+    },
+    "Node1": {
+        "NodeName": "Node1",
+        "NodeClass": "ZKnight.UFlowChart.Node.PlayAnimation",
+        "Inputs": [
+            {
+                "FieldName": "Anim",
+                "Source": "Node0 CreatedUnit"
+            },
+            {
+                "FieldName": "AnimationName",
+                "Value": "Walk"
+            }
+        ],
+        "Links": {
+            "Next": ""
+        }
+    }
+}
+
 如果你明白了，就直接回复一个“好”。
