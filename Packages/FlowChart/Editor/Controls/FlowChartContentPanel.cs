@@ -239,34 +239,38 @@ namespace ZKnight.UFlowChart.Editor
 
         private void InitButtonTree()
         {
-            Type[] types = typeof(FlowChart).Assembly.GetTypes();
-            foreach (Type type in types)
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var assembly in assemblies)
             {
-                object[] attrs = type.GetCustomAttributes(typeof(FlowChartNodeAttribute), false);
-                foreach (FlowChartNodeAttribute item in attrs)
+                Type[] types = assembly.GetTypes();
+                foreach (Type type in types)
                 {
-                    string[] paths = item.EditorPath.Split('/');
-                    if (item.Hidden && item.Abenden)
+                    object[] attrs = type.GetCustomAttributes(typeof(FlowChartNodeAttribute), false);
+                    foreach (FlowChartNodeAttribute item in attrs)
                     {
-                        continue;
-                    }
-                    ButtonTree tree = _contextTree;
-                    for (int i = 0; i < paths.Length - 1; ++i)
-                    {
-                        tree = tree.GetButtonTree(paths[i], this, i);
-                    }
-
-                    if (item.Overload)
-                    {
-                        NodeOverloadManager.INSTANCE.SetOverrideNode(item.EditorPath, type);
-                        if (!tree.SubTree.ContainsKey(paths[paths.Length - 1]))
+                        string[] paths = item.EditorPath.Split('/');
+                        if (item.Hidden && item.Abenden)
                         {
-                            tree.CreateButton(type, paths[paths.Length - 1], this, paths.Length - 1, item.EditorPath);
+                            continue;
                         }
-                    }
-                    else
-                    {
-                        tree.CreateButton(type, paths[paths.Length - 1], this, paths.Length - 1);
+                        ButtonTree tree = _contextTree;
+                        for (int i = 0; i < paths.Length - 1; ++i)
+                        {
+                            tree = tree.GetButtonTree(paths[i], this, i);
+                        }
+
+                        if (item.Overload)
+                        {
+                            NodeOverloadManager.INSTANCE.SetOverrideNode(item.EditorPath, type);
+                            if (!tree.SubTree.ContainsKey(paths[paths.Length - 1]))
+                            {
+                                tree.CreateButton(type, paths[paths.Length - 1], this, paths.Length - 1, item.EditorPath);
+                            }
+                        }
+                        else
+                        {
+                            tree.CreateButton(type, paths[paths.Length - 1], this, paths.Length - 1);
+                        }
                     }
                 }
             }
