@@ -140,7 +140,7 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.zknight.zxmlui": "1.0.3"
+        "com.zknight.zxmlui": "https://github.com/ZSaltedFish/ZXMLui.git?path=Packages/ZXMLui"
       }
     },
     "com.zknight.zxmlui": {
