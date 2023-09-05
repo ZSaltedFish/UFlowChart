@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace ZKnight.UFlowChart.Runtime
@@ -115,7 +117,11 @@ namespace ZKnight.UFlowChart.Runtime
         public static string StartWorld()
         {
             var path = "Packages/com.ZKnight.UFlowChart/Resources/ChatGPT/GPTDirect.txt";
+#if UNITY_EDITOR
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(path);
+#else
+            var textAsset = Resources.Load<TextAsset>(path);
+#endif
             return textAsset.text;
         }
 
