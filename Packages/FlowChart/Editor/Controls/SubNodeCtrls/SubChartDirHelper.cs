@@ -15,25 +15,32 @@ namespace ZKnight.UFlowChart.Editor
 
         public static void Init()
         {
-            _SUB_CHART = new Dictionary<string, GameObject>();
-            string dir = FlowChartConfig.INSTANCE.SubNodePath;
-            string[] paths = Directory.GetFiles(dir);
-
-            foreach (string tPath in paths)
+            try
             {
-                string path = tPath.ToLower();
-                if (!path.EndsWith(".prefab"))
+                _SUB_CHART = new Dictionary<string, GameObject>();
+                string dir = FlowChartConfig.INSTANCE.SubNodePath;
+                string[] paths = Directory.GetFiles(dir);
+
+                foreach (string tPath in paths)
                 {
-                    continue;
+                    string path = tPath.ToLower();
+                    if (!path.EndsWith(".prefab"))
+                    {
+                        continue;
+                    }
+                    FileInfo info = new FileInfo(path);
+                    string newPath = path.Replace('\\', '/');
+                    int index = newPath.IndexOf("assets");
+                    newPath = newPath.Substring(index);
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(newPath);
+                    _SUB_CHART.Add(info.Name.Remove(info.Name.IndexOf(".prefab")), prefab);
                 }
-                FileInfo info = new FileInfo(path);
-                string newPath = path.Replace('\\', '/');
-                int index = newPath.IndexOf("assets");
-                newPath = newPath.Substring(index);
-                GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(newPath);
-                _SUB_CHART.Add(info.Name.Remove(info.Name.IndexOf(".prefab")), prefab);
             }
-        }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }        
 
         public static Dictionary<string, GameObject> GetSubChart()
         {
