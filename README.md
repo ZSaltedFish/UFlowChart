@@ -2,7 +2,7 @@
 
 ## Overview
 
-**UFlowChart** is a programmable flowchart editor designed for Unity Editor. It allows developers to visually build and control structured logic such as behavior trees, AI systems, story flows, and task logic by writing C# scripts to define custom nodes.
+**UFlowChart** is a programmable flowchart editor designed for Unity Editor. It allows developers to visually build and control structured logic such as behavior trees, story flows, and task logic by writing C# scripts to define custom nodes.
 
 > Basic knowledge of C# scripting is required to use this editor, as all node logic is implemented through code.
 
